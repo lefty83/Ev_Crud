@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const token = JSON.parse(localStorage.getItem('user')) || '';
+const token = JSON.parse(localStorage.getItem('store')) || '';
 
 export const apiClient = axios.create({
     baseURL: '',
@@ -8,11 +8,3 @@ export const apiClient = axios.create({
         "Authorization": token.token
     }
 });
-
-// apiClient.interceptors.request.use(config => {
-//     const user = JSON.parse(localStorage.getItem('user'));
-//     if (user?.token) {
-//         config.headers.Authorization = user.token;
-//     }
-//     return config;
-// });
